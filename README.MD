@@ -24,6 +24,7 @@ WIFI_PASSWORD=...
 ```
 
 **note**
+
 The backend looks for a network device named `espcam.local` using Multicast DNS. If this doesn't work on your setup, plug in the ESP32's IP address in the `index.ts` file. You'll find this address in the serial output of the ESP32 during startup.
 
 ### Build and upload
