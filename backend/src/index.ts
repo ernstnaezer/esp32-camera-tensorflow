@@ -1,3 +1,6 @@
+// ESP32 Camera Object Detection
+// MIT License
+
 import * as WebSocket from 'ws';
 
 import * as tf from '@tensorflow/tfjs-node'
@@ -26,7 +29,7 @@ const drawPredictions = async (imageData:Uint8Array, predictions:cocoSsd.Detecte
         ctx.fillStyle = 'white'
         ctx.stroke()
         ctx.fillText(
-            `${prediction.score.toFixed(3)} ${prediction.class}`, 
+            `${prediction.score.toFixed(3)} ${prediction.class}`,
             prediction.bbox[0],
             prediction.bbox[1] > 10 ? prediction.bbox[1] - 5 : 10)
 
@@ -44,25 +47,23 @@ const drawPredictions = async (imageData:Uint8Array, predictions:cocoSsd.Detecte
     const emitter = startStreamServer()
 
     console.log('Loading detection model');
-    
+
     const model = await cocoSsd.load();
     const client = new WebSocket('ws://espcam.local')
-  
+
     client.on('open', () => {
-        console.log('Connected to ESP, here we go');        
+        console.log('Connected to ESP, here we go');
     });
 
-    client.on('message', async (imageData:Uint8Array) => { 
+    client.on('message', async (imageData:Uint8Array) => {
 
         tf.engine().startScope()
         const imgTensor = tf.node.decodeImage(imageData, 3) as Tensor3D
         const predictions = await model.detect(imgTensor)
         tf.engine().endScope()
 
-        const image = await drawPredictions(imageData, predictions) 
+        const image = await drawPredictions(imageData, predictions)
         emitter.emit('frame', image);
-    });  
+    });
 
 })();
-
-  

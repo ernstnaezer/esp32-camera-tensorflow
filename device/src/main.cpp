@@ -1,3 +1,6 @@
+// ESP32 Camera Object Detection
+// MIT License
+
 #include "esp_wifi.h"
 #include <Arduino.h>
 #include <ESPmDNS.h>

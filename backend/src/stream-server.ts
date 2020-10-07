@@ -1,3 +1,6 @@
+// ESP32 Camera Object Detection
+// MIT License
+
 import * as express from 'express'
 import { EventEmitter } from 'events';
 import StrictEventEmitter from 'strict-event-emitter-types';
@@ -5,7 +8,7 @@ import StrictEventEmitter from 'strict-event-emitter-types';
 export interface Events {
     frame: (data:Uint8Array) => void;
 }
-  
+
 export const startStreamServer = () : StrictEventEmitter<EventEmitter, Events> => {
 
     const emitter: StrictEventEmitter<EventEmitter, Events> = new EventEmitter;
