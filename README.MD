@@ -45,6 +45,13 @@ Once everything is setup, type;
 
 You can now open a browser and visit `http://localhost:3000`
 
+## Sample output
+
+The device is by default configured with the camera pin-out for an LilyGo TTGO micro. You can configure this for other models as well. If everything works as it should, you'll see predictions drawn like this.
+
+![ttgo camera](https://raw.githubusercontent.com/ernstnaezer/esp32-camera-tensorflow/main/assets/browser-capture.jpg)
+
+![ttgo camera](https://github.com/ernstnaezer/esp32-camera-tensorflow/blob/main/assets/ttgo-camera.jpg?raw=true)
 
 ## Building using 
 
