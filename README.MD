@@ -48,6 +48,14 @@ You can now open a browser and visit `http://localhost:3000`
 
 ## Building using 
 
-https://github.com/tensorflow/tfjs-models
-https://platformio.org
-https://github.com/yoursunny/esp32cam
+The backend runs on nodejs, and is build using TypeScript
+
+- https://github.com/tensorflow/tfjs-models
+- https://github.com/websockets/ws
+- https://expressjs.com
+
+The devices code runs on an ESP32, and is build using Arduino
+
+- https://platformio.org
+- https://github.com/yoursunny/esp32cam
+- https://github.com/Links2004/arduinoWebSockets 
