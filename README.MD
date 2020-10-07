@@ -48,5 +48,6 @@ You can now open a browser and visit `http://localhost:3000`
 
 ## Building using 
 
+https://github.com/tensorflow/tfjs-models
 https://platformio.org
 https://github.com/yoursunny/esp32cam
