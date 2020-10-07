@@ -16,7 +16,8 @@ The setup is as follows;
 
 For your ESP32 to connect, create the file `wifi_secrets.txt` containing your wifi credentials. It should look like this and gets picked up by the buildsystem to include these into you firmware:
 
-```# use this file to define your Wifi secrets
+```
+# use this file to define your Wifi secrets
 
 WIFI_SSID=...
 WIFI_PASSWORD=...
